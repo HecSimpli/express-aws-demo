@@ -11,7 +11,8 @@ import { TurfSample } from '../turf-sample';
       <img class="listing-photo" [src]="turfingSample.
       photo" alt="photo of {{turfingSample.name}}">
       <h2 class="listing-heading">{{turfingSample.name}}</h2>
-      <p class="listing-sample">{{turfingSample.oz}}, {{turfingSample.pileHeight}}</p>
+      <p class="listing-sample">{{turfingSample.oz}}, {{turfingSample.pileHeight}},
+       {{turfingSample.rollSize13}}, {{turfingSample.rollSize15}}</p>
     </section>
   `,
   styleUrl: './turfing-sample.component.css'
