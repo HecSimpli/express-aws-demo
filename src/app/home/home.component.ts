@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TurfingSampleComponent } from '../turfing-sample/turfing-sample.component';
 import { TurfSample } from '../turf-sample';
+import { TurfingService } from '../turfing.service';
+
 @Component({
   selector: 'app-home',
   standalone: true, 
@@ -23,106 +25,10 @@ import { TurfSample } from '../turf-sample';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  turfSampleList: TurfSample[] = [
-    {
-      "id": 0,
-      "name": "Summer-55",
-      "oz": "55 Oz",
-      "pileHeight":"pile height 1.25\"",
-      "photo": "/assets/summer-55.jpg",
-      "availableRolls": 4,
-      "rollSize13": true,
-      "rollSize15": true
-      },
-      {
-        "id": 1,
-        "name": "Ventura-75",
-        "oz": "75 Oz",
-        "pileHeight": "pile height 1.57\"",
-        "photo": "/assets/ventura-75.jpg",
-        "availableRolls": 0,
-        "rollSize13": false,
-        "rollSize15": true
-      },
-      {
-        "id": 2,
-        "name": "Malibu-85",
-        "oz": "85 Oz",
-        "pileHeight": "pile height 1.57\"",
-        "photo": "/assets/malibu-85.jpg",
-        "availableRolls": 1,
-        "rollSize13": false,
-        "rollSize15": false
-      },
-      {
-        "id": 3,
-        "name": "Sunrise-85",
-        "oz": "85 Oz",
-        "pileHeight": "pile height 1.77\"",
-        "photo": "/assets/sunrise-85.jpg",
-        "availableRolls": 1,
-        "rollSize13": true,
-        "rollSize15": false
-      },
-      {
-        "id": 4,
-        "name": "Oasis-92",
-        "oz": "92 Oz",
-        "pileHeight": "pile height 1.97\"",
-        "photo": "/assets/oasis-92.jpg",
-        "availableRolls": 1,
-        "rollSize13": true,
-        "rollSize15": false
-      },
-      {
-        "id": 5,
-        "name": "PalmSpring-102",
-        "oz": "102 Oz",
-        "pileHeight": "pile height 2\"",
-        "photo": "/assets/palmSpring-102.jpg",
-        "availableRolls": 2,
-        "rollSize13": true,
-        "rollSize15": true
-      },
-      {
-        "id": 6,
-        "name": "California-120",
-        "oz": "120 Oz",
-        "pileHeight": "pile height 2\"",
-        "photo": "/assets/california-120.jpg",
-        "availableRolls": 5,
-        "rollSize13": true,
-        "rollSize15": true
-      },
-      {
-        "id": 7,
-        "name": "PuttingGreen-73",
-        "oz": "73 Oz",
-        "pileHeight": "height .5\"",
-        "photo": "/assets/putting-73.jpg",
-        "availableRolls": 2,
-        "rollSize13": true,
-        "rollSize15": true
-      },
-      {
-        "id": 8,
-        "name": "Oakland",
-        "oz": "80 Oz",
-        "pileHeight": "1.60\"",
-        "photo": "/assets/oakland-80.jpg",
-        "availableRolls": 10,
-        "rollSize13": false,
-        "rollSize15": false
-      },
-      {
-        "id": 9,
-        "name": "Portland",
-        "oz": "70 Oz",
-        "pileHeight": "1.75\"",
-        "photo": "/assets/portland-70.jpg",
-        "availableRolls": 6,
-        "rollSize13": true,
-        "rollSize15": true
-      }
-  ];
+  turfSampleList: TurfSample[] = [];
+  turfingService: TurfingService = inject (TurfingService);
+
+  constructor() {
+    this.turfSampleList = this.turfingService.getAllTurfingSamples();
+  }
 }
