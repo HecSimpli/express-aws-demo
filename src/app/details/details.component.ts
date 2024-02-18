@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { TurfingService } from '../turfing.service';
 import { TurfSample } from '../turf-sample';
-
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   template: `
    <article>
    <img class="lisiting-photo" [src]="turfSample?.photo">
@@ -26,7 +26,18 @@ import { TurfSample } from '../turf-sample';
     </section>
     <section class="listing-apply">
       <h2 class="section-heading">Make your order</h2>
-      <button class="primary">click here</button>
+
+      <form [formGroup]="applyForm" (submit)="submitApplication()">
+      <label for="first-name">First Name</label>
+      <input id="first-name" type="text" formControlName="firstName">
+
+      <label for="last-name">Last Name</label>
+      <input id="last-name" type="text" formControlName="lastName">
+
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email">
+      <button type="submit" class="primary">Order Now</button>
+      </form>
     </section>
    </article>
   `,
@@ -36,11 +47,21 @@ export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   turfingService = inject(TurfingService);
   turfSample: TurfSample | undefined;
-  //  turfingSampleId = 0;
+  applyForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl('')
+  })
 
   constructor() {
     const turfingSampleId = Number(this.route.snapshot.params["id"]);
-    this.turfSample = this.turfingService.
-    getHousingLocationById(turfingSampleId);
+    this.turfSample = this.turfingService.getHousingLocationById(turfingSampleId);
+  }
+  submitApplication(){
+    this.turfingService.submitApplication(
+      this.applyForm.value.firstName ?? '',
+      this.applyForm.value.lastName ?? '',
+      this.applyForm.value.email ?? ''
+    );
   }
 }

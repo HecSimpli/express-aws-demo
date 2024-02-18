@@ -118,4 +118,8 @@ export class TurfingService {
   getHousingLocationById(id: Number): TurfSample | undefined {
     return this.turfSampleList.find(turfSample => turfSample.id === id);
   }
+  submitApplication(firstName: string, lastName: string, email: string){
+    console.log(firstName, lastName, email);
+  }
 }
+
