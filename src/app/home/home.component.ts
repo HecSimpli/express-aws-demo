@@ -22,13 +22,16 @@ import { TurfingService } from '../turfing.service';
     </section>
    
   `,
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
   turfSampleList: TurfSample[] = [];
   turfingService: TurfingService = inject (TurfingService);
 
   constructor() {
-    this.turfSampleList = this.turfingService.getAllTurfingSamples();
+    this.turfingService.getAllTurfingSamples().then((turfSampleList: TurfSample[]) => {
+      this.turfSampleList = turfSampleList;
+    });
+      
   }
 }

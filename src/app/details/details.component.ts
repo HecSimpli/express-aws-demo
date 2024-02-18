@@ -55,7 +55,9 @@ export class DetailsComponent {
 
   constructor() {
     const turfingSampleId = Number(this.route.snapshot.params["id"]);
-    this.turfSample = this.turfingService.getHousingLocationById(turfingSampleId);
+    this.turfingService.getTurfingSampleById(turfingSampleId).then(turfSample => {
+      this.turfSample = turfSample;
+    });
   }
   submitApplication(){
     this.turfingService.submitApplication(
