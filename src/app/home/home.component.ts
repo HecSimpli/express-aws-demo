@@ -11,13 +11,13 @@ import { TurfingService } from '../turfing.service';
   template: `
     <section>
       <form>
-        <input type="text" placeholder="Filter by kind">
-        <button class="primary" type="button">Search</button>
+        <input type="text" placeholder="Filter by kind" #filter>
+        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
       </form>
     </section>
     <hr>
     <section class="results">
-      <app-turfing-sample *ngFor="let turfSample of turfSampleList" [turfingSample]="turfSample"></app-turfing-sample>
+      <app-turfing-sample *ngFor="let turfSample of filteredSampleList" [turfingSample]="turfSample"></app-turfing-sample>
 
     </section>
    
@@ -27,11 +27,19 @@ import { TurfingService } from '../turfing.service';
 export class HomeComponent {
   turfSampleList: TurfSample[] = [];
   turfingService: TurfingService = inject (TurfingService);
-
+  filteredSampleList:TurfSample[] = [];
   constructor() {
     this.turfingService.getAllTurfingSamples().then((turfSampleList: TurfSample[]) => {
       this.turfSampleList = turfSampleList;
-    });
-      
+      this.filteredSampleList = turfSampleList;
+    }); 
+  }
+
+  filterResults(text: string){
+    if (!text) this.filteredSampleList = this.turfSampleList;
+
+    this.filteredSampleList = this.turfSampleList.filter(
+      turfSample => turfSample?.name.toLowerCase().includes(text.toLowerCase())
+    );
   }
 }
