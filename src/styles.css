@@ -6,12 +6,12 @@
   
   body {
     font-family: 'Be Vietnam Pro', sans-serif;
-    background-color: darkgrey;
+    background: linear-gradient(170deg, hwb(193 71% 3%),#adb8e7);
   }
   :root {
     --primary-color: #f98a03;
     --secondary-color: #0d9c06;
-    --accent-color: #faf1e7;
+    --accent-color: hsl(31, 97%, 88%);
     --shadow-color: #E8E8E8;
   }
   

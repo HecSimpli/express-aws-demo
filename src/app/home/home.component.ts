@@ -15,7 +15,7 @@ import { TurfingService } from '../turfing.service';
         <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
       </form>
     </section>
-    <hr>
+
     <section class="results">
       <app-turfing-sample *ngFor="let turfSample of filteredSampleList" [turfingSample]="turfSample"></app-turfing-sample>
 

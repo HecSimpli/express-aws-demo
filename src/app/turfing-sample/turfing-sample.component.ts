@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
       <img class="listing-photo" [src]="turfingSample.
       photo" alt="photo of {{turfingSample.name}}">
       <h2 class="listing-heading">{{turfingSample.name}}</h2>
-      <p class="listing-sample">{{turfingSample.oz}}</p>
+      <p class="listing-location">{{turfingSample.oz}}</p>
      <a [routerLink]="['/details', turfingSample.id]">More Details</a>
     </section>
   `,

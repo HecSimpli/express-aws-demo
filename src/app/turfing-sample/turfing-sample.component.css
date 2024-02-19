@@ -5,6 +5,7 @@
     border-radius: 30px;
     padding-bottom: 30px;
   }
+ 
   .listing-heading {
     color: var(--primary-color);
     padding: 10px 20px 0 20px;
@@ -17,6 +18,7 @@
   }
   .listing-location {
     padding: 10px 20px 20px 20px;
+    font-weight: 600;
   }
   .listing-location::before {
     content: url("/assets/location-pin.svg") / "";
@@ -31,4 +33,3 @@
     content: "\203A";
     margin-left: 5px;
   }
-  

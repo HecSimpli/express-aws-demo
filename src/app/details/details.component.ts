@@ -20,8 +20,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
       <h2 class="section-heading">About this kind of turf</h2>
       <ul>
         <li>Rolls available: {{turfSample?.availableRolls}}</li>
-        <li>Size is 13 wide: {{turfSample?.rollSize13}}</li>
-        <li>Size is 15 wide:{{turfSample?.rollSize15}}</li>
+        <li>Available in 13 ft wide: {{turfSample?.rollSize13}}</li>
+        <li>Available in 15 ft wide: {{turfSample?.rollSize15}}</li>
       </ul>
     </section>
     <section class="listing-apply">

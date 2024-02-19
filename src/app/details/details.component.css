@@ -20,6 +20,8 @@
   .listing-location {
     font-size: 24pt;
     margin-bottom: 15px;
+    font-weight: 600;
+    
   }
   
   .listing-features > .section-heading {
@@ -28,8 +30,9 @@
     margin-bottom: 15px;
   }
   
-  .listing-features {
-    margin-bottom: 20px;
+  .listing-features li {
+    margin-bottom: 4px;
+    
   }
   
   .listing-features li {
