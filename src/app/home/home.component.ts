@@ -11,7 +11,7 @@ import { TurfingService } from '../turfing.service';
   template: `
     <section>
       <form>
-        <input type="text" placeholder="Filter by kind">
+        <input type="text" placeholder="Filter by name or Oz">
         <button class="primary" type="button">Search</button>
       </form>
     </section>

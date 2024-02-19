@@ -13,9 +13,9 @@ export class TurfingService {
       "oz": "55 Oz",
       "pileHeight":"pile height 1.25\"",
       "photo": "/assets/summer-55.jpg",
-      "availableRolls": 4,
+      "availableRolls": 20,
       "rollSize13": true,
-      "rollSize15": true
+      "rollSize15": false
       },
       {
         "id": 1,
@@ -23,9 +23,9 @@ export class TurfingService {
         "oz": "75 Oz",
         "pileHeight": "pile height 1.57\"",
         "photo": "/assets/ventura-75.jpg",
-        "availableRolls": 0,
-        "rollSize13": false,
-        "rollSize15": true
+        "availableRolls": 44,
+        "rollSize13": true,
+        "rollSize15": false
       },
       {
         "id": 2,
@@ -33,9 +33,9 @@ export class TurfingService {
         "oz": "85 Oz",
         "pileHeight": "pile height 1.57\"",
         "photo": "/assets/malibu-85.jpg",
-        "availableRolls": 1,
-        "rollSize13": false,
-        "rollSize15": false
+        "availableRolls": 64,
+        "rollSize13": true,
+        "rollSize15": true
       },
       {
         "id": 3,
@@ -43,9 +43,9 @@ export class TurfingService {
         "oz": "85 Oz",
         "pileHeight": "pile height 1.77\"",
         "photo": "/assets/sunrise-85.jpg",
-        "availableRolls": 1,
+        "availableRolls": 58,
         "rollSize13": true,
-        "rollSize15": false
+        "rollSize15": true
       },
       {
         "id": 4,
@@ -53,9 +53,9 @@ export class TurfingService {
         "oz": "92 Oz",
         "pileHeight": "pile height 1.97\"",
         "photo": "/assets/oasis-92.jpg",
-        "availableRolls": 1,
-        "rollSize13": true,
-        "rollSize15": false
+        "availableRolls": 33,
+        "rollSize13": false,
+        "rollSize15": true
       },
       {
         "id": 5,
@@ -63,8 +63,8 @@ export class TurfingService {
         "oz": "102 Oz",
         "pileHeight": "pile height 2\"",
         "photo": "/assets/palmSpring-102.jpg",
-        "availableRolls": 2,
-        "rollSize13": true,
+        "availableRolls": 42,
+        "rollSize13": false,
         "rollSize15": true
       },
       {
@@ -73,8 +73,8 @@ export class TurfingService {
         "oz": "120 Oz",
         "pileHeight": "pile height 2\"",
         "photo": "/assets/california-120.jpg",
-        "availableRolls": 5,
-        "rollSize13": true,
+        "availableRolls": 19,
+        "rollSize13": false,
         "rollSize15": true
       },
       {
@@ -83,9 +83,9 @@ export class TurfingService {
         "oz": "73 Oz",
         "pileHeight": "height .5\"",
         "photo": "/assets/putting-73.jpg",
-        "availableRolls": 2,
+        "availableRolls": 24,
         "rollSize13": true,
-        "rollSize15": true
+        "rollSize15": false
       },
       {
         "id": 8,
@@ -94,7 +94,7 @@ export class TurfingService {
         "pileHeight": "1.60\"",
         "photo": "/assets/oakland-80.jpg",
         "availableRolls": 10,
-        "rollSize13": false,
+        "rollSize13": true,
         "rollSize15": false
       },
       {
@@ -105,7 +105,7 @@ export class TurfingService {
         "photo": "/assets/portland-70.jpg",
         "availableRolls": 6,
         "rollSize13": true,
-        "rollSize15": true
+        "rollSize15": false
       }
   ];
 

@@ -1,3 +1,6 @@
+article {
+  padding-left: 15px;
+}
 
 .listing-photo {
     height: 600px;
@@ -6,7 +9,7 @@
     border-radius: 30px;
     float: right;
   }
-  
+
   .listing-heading {
     font-size: 48pt;
     font-weight: bold;
@@ -21,6 +24,7 @@
     font-size: 24pt;
     margin-bottom: 15px;
   }
+
   
   .listing-features > .section-heading {
     color: var(--secondary-color);
@@ -34,6 +38,7 @@
   
   .listing-features li {
     font-size: 14pt;
+    margin-bottom: 3pt;
   }
   
   li {
